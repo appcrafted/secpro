@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#27313B"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="0dip"
+            android:layout_weight="1"
+            android:background="#8a1549"
+            android:padding="10.0dip">
+
+
+            <FrameLayout
+                android:id="@+id/frame_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#760f46"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:id="@+id/iv_icon_app"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/logo" />
+
+                <ImageView
+                    android:id="@+id/bg_icon_app"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/bg_icon_app" />
+            </FrameLayout>
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:padding="5dp"
+                android:textSize="16sp"
+                android:id="@+id/tv_app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/frame_icon"
+                android:text="Battery Saver"
+                android:layout_centerInParent="true"
+                android:textColor="@android:color/white"
+                />
+
+            <LinearLayout
+                android:padding="5dp"
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:layout_below="@+id/tv_app_name"
+                android:id="@+id/ll_layout_for_app"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <ImageView
+                    android:id="@+id/bt_ignore_app"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="30dp"
+                    android:clickable="true"
+                    android:paddingRight="10.0dip"
+                    android:src="@drawable/bt_ignoresetting" />
+
+                <ImageView
+                    android:id="@+id/bt_uninstall_app"
+                    android:layout_width="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_height="30dp"
+                    android:clickable="true"
+                    android:paddingLeft="10.0dip"
+                    android:src="@drawable/bt_uninstall" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginBottom="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="1.0"
+            android:background="#322fb2"
+            >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_permissions"
+                android:scrollbars="vertical"
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

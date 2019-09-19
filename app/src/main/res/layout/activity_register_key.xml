@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    tools:context=".Activity.RegisterKey">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/input_layout_key"
+        android:layout_width="match_parent"
+        android:layout_marginTop="200dp"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/input_key"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Enter Your Registration key" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button android:id="@+id/btn_verify"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Verify"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="40dp"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

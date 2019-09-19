@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Security Pro</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="sample_device_admin_description">HI am the super administrator of the device.</string>
+    <string name="add_admin_extra_app_text">You can disable Camera so other spying or hidden cam can not access your camera without your permission.</string>
+
+
+    <string name="access_camera_title">Can access camera</string>
+    <string name="access_fine_message">This application can access its exact position and is a risk for your privacy.</string>
+    <string name="record_audio_message">This application can record audio and is a risk for your privacy.</string>
+    <string name="record_audio_title">Can record audio</string>
+    <string name="outgoing_calls_title">Can control outgoing calls</string>
+    <string name="outgoing_phone_message">This app can see the number being dialed during an outgoing call with the option to redirect the call to a different number or abort the call altogether. This can add charges to data plan and is a HIGH privacy risk.</string>
+
+    <string name="read_history_bookmark_title">Can read your history</string>
+    <string name="read_history_message">This application can read your history bookmarks and is a risk for your privacy.</string>
+    <string name="read_phone_message">This app collects and sends SIM card details, including address book, mobile PIN, and call history. This can add charges to data plan and is a HIGH privacy risk.</string>
+    <string name="read_sms_message">This application can read your private SMS and is a risk for your privacy.</string>
+    <string name="read_your_sms">Can read your SMS</string>
+
+    <string name="call_phone_message">This app can initiate a phone call without going through the Dialer user interface for the user to confirm the call. This can add charges to data plan and is a HIGH privacy risk.</string>
+    <string name="camera_message">This application can access the camera device and is a risk for your privacy.</string>
+    <string name="can_make_call_title">Can make calls</string>
+
+    <string name="write_history_bookmark_title">Can write your history</string>
+    <string name="write_history_message">This application can write your history bookmarks and is a risk for your privacy.</string>
+    <string name="write_sms_message">This application can write SMS. This can add charges to data plan and is a MEDIUM privacy risk.</string>
+    <string name="write_sms_title">Can write SMS</string>
+
+    <string name="send_sms_message">This application can send SMS. This can add charges to data plan and is a HIGH privacy risk.</string>
+    <string name="send_sms_title">Can send SMS</string>
+
+    <string name="location_shared">Location shared</string>
+
+    <string name="phone_data_shared">Phone data shared</string>
+    <string name="Home">Home</string>
+
+</resources>
