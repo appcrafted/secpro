@@ -10,7 +10,7 @@ Security pro is a free app for android device users who wants to protect their d
 
 ## Screenshots
 
-![SecPro](https://github.com/karma9874/AndroRAT/blob/master/Screenshots/5.jpg "SecPro in action")
+![SecPro](https://play-lh.googleusercontent.com/nsbMGKJkuatskvFZPwNC5Px8EMDvTfutEHC46DYcezAuwgv-eq4T5XH7fmPNXvT-gYg=w1600-h737 "SecPro in action")
 ## Features of SecPro 
 * Enable disable camera
 * Enable disable microphone
