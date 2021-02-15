@@ -26,11 +26,13 @@ Security pro is a free app for android device users who wants to protect their d
 SecPro requires Android Studio
 
 
+Currently available on the Play store.
 
+<a href='https://play.google.com/store/apps/details?id=com.securitypro.proapp&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' height='80px'/></a>
 
 
 ## License
-AndroRAT is licensed under MIT license take a look at the [LICENSE](https://github.com/appcrafted/SecPro/blob/master/LICENSE) for more information.
+SecPro is licensed under MIT license take a look at the [LICENSE](https://github.com/appcrafted/SecPro/blob/master/LICENSE) for more information.
 
 
 
