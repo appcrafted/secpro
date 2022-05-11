@@ -40,7 +40,8 @@
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme">
         <activity android:name="com.securitypro.proapp.Activity.MainActivity"></activity>
-        <activity android:name="com.securitypro.proapp.Activity.Splash">
+        <activity android:name="com.securitypro.proapp.Activity.Splash"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -51,7 +52,8 @@
             android:name="com.securitypro.proapp.Receiver.DeviceAdminSampleReceiver"
             android:description="@string/sample_device_admin_description"
             android:label="@string/app_name"
-            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            android:permission="android.permission.BIND_DEVICE_ADMIN"
+            android:exported="true">
             <meta-data
                 android:name="android.app.device_admin"
                 android:resource="@xml/device_admin_sample" />
@@ -63,14 +65,16 @@
 
         <receiver
             android:name="com.securitypro.proapp.Receiver.BlueToothReceiver"
-            android:enabled="true">
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.bluetooth.adapter.action.STATE_CHANGED"/>
                 <action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.securitypro.proapp.Receiver.WifiReceiver" android:enabled="true">
+        <receiver android:name="com.securitypro.proapp.Receiver.WifiReceiver" android:enabled="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
@@ -83,7 +87,8 @@
 
         <receiver
             android:name="com.securitypro.proapp.Receiver.CameraEventReciver"
-            android:enabled="true" >
+            android:enabled="true"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.camera.NEW_PICTURE" />
                 <action android:name="android.hardware.action.NEW_PICTURE" />

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -22,19 +23,17 @@ import com.securitypro.proapp.Fragment.permissionFragment;
 import com.securitypro.proapp.Fragment.appSecureFragment;
 import com.securitypro.proapp.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
-    private Toolbar toolbar;
     private TabLayout tabLayout;
     private ViewPager viewPager;
+
+    private static final int NUM_PAGES = 4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -51,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.addFragment(new permissionFragment(), "Permit");
         adapter.addFragment(new hiddenFragment(), "Hidden");
         adapter.addFragment(new allFragment(), "All Apps");
+        viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
         viewPager.setAdapter(adapter);
     }
     class ViewPagerAdapter extends FragmentPagerAdapter {
@@ -79,25 +79,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public CharSequence getPageTitle(int position) {
             return mFragmentTitleList.get(position);
-        }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle item selection
-        switch (item.getItemId()) {
-            case R.id.home:
-                mainPage();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
         }
     }
 
