@@ -1,5 +1,8 @@
 package com.securitypro.proapp.Fragment;
 
+import static android.content.Context.DEVICE_POLICY_SERVICE;
+
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.admin.DevicePolicyManager;
 import android.bluetooth.BluetoothAdapter;
@@ -7,9 +10,11 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,7 +69,8 @@ public class appSecureFragment extends Fragment implements CompoundButton.OnChec
         bluetooth_switch = view.findViewById(R.id.bluetooth_switch);
 
         savePref = new SavePref(getActivity());
-        mDevicePolicyManager = (DevicePolicyManager) getActivity().getSystemService(Context.DEVICE_POLICY_SERVICE);
+        mDevicePolicyManager = (DevicePolicyManager) getActivity().getSystemService(DEVICE_POLICY_SERVICE);
+        deviceAdminSample = new ComponentName(getActivity(), DeviceAdminSampleReceiver.class);
 
         checkDeviceAdmin();
 
@@ -129,7 +135,6 @@ public class appSecureFragment extends Fragment implements CompoundButton.OnChec
     }
 
     private void checkDeviceAdmin() {
-        deviceAdminSample = new ComponentName(getActivity(), DeviceAdminSampleReceiver.class);
         if (!savePref.getDeviceAdmin()) {
             AlertBoxForDAdmin();
         }
@@ -212,16 +217,16 @@ public class appSecureFragment extends Fragment implements CompoundButton.OnChec
 
     private void micmute() {
 
-        final AudioManager aM = (AudioManager) getActivity().getSystemService("audio");
-        aM.setMode(2);
+        final AudioManager aM = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
+        aM.setMode(AudioManager.MODE_IN_CALL);
         aM.setMicrophoneMute(true);
         //MicMute.this.status.setText("Muted");
     }
 
     private void micunmute() {
-        final AudioManager aM = (AudioManager) getActivity().getSystemService("audio");
+        final AudioManager aM = (AudioManager) getActivity().getSystemService(Context.AUDIO_SERVICE);
         if (aM.isMicrophoneMute()) {
-            aM.setMode(2);
+            aM.setMode(AudioManager.MODE_IN_CALL);
             aM.setMicrophoneMute(false);
             //MicMute.this.status.setText("Unmuted");
             return;
@@ -240,9 +245,7 @@ public class appSecureFragment extends Fragment implements CompoundButton.OnChec
                         System.out.println("KEY_CB_DEVICE_ADMIN enable");
                         Intent intent = new Intent(DevicePolicyManager.ACTION_ADD_DEVICE_ADMIN);
                         intent.putExtra(DevicePolicyManager.EXTRA_DEVICE_ADMIN, deviceAdminSample);
-                        intent.putExtra(DevicePolicyManager.EXTRA_ADD_EXPLANATION,
-                                getActivity().getString(R.string.add_admin_extra_app_text));
-                        startActivityForResult(intent, 1);
+                        startActivityForResult(intent, 100);
                         savePref.setDeviceAdmin(true);
                     }
                 });
